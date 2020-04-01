@@ -68,6 +68,14 @@ class PlaySoundsViewController: UIViewController {
         configureUI(.notPlaying)
     }
     
+    override func willMove(toParent parent: UIViewController?)
+    {
+        super.willMove(toParent: parent)
+        if parent == nil
+        {
+            stopAudio()
+        }
+    }
 
     /*
     // MARK: - Navigation
